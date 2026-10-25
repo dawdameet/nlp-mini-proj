@@ -1,0 +1,31 @@
+[project]
+name = "instalens"
+version = "1.0.0"
+description = "Instagram Comment Sentiment Analyzer — A lexicon-driven NLP pipeline for explainable sentiment analysis"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.0",
+    "nltk>=3.8",
+    "numpy>=1.24",
+    "pandas>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov",
+]
+
+[project.scripts]
+instalens = "instalens.cli:cli"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
